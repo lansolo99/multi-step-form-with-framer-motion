@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply font-ubuntu;
+}
+
+.globalSection {
+    @apply px-4 py-8 mx-auto;
+
+    @screen md {
+        @apply px-6 max-w-1248;
+    }
+}
+
+.u-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%) scale(1.02);
+}
+
+.u-center-v {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+::selection {
+    @apply bg-bp-secondary-500 text-white;
+}
