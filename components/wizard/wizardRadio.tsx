@@ -22,7 +22,7 @@ interface Props {
     question: QuestionsEntity;
     scopeId: number;
     scope: ScopesEntity;
-    context: 'choice';
+    context: 'choice' | '';
 }
 
 const WizardRadio = ({ id, formik, question, scope, scopeId, context }: Props) => {
@@ -44,13 +44,7 @@ const WizardRadio = ({ id, formik, question, scope, scopeId, context }: Props) =
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}>
                     <div
-                        className={clsx(
-                            `grid lg:gap-2 `,
-                            { 'grid-cols-2': context === 'choice' },
-                            {
-                                'grid-cols-2 lg:grid-flow-col': context === 'subquestion'
-                            }
-                        )}>
+                        className={clsx(`grid lg:gap-2 `, { 'grid-cols-2': context === 'choice' })}>
                         {scope.options.map((option) => {
                             return (
                                 <FormControlLabel

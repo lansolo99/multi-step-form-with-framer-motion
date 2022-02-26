@@ -45,13 +45,6 @@ const Wizard = ({ formDatas }: IWizardProps) => {
     });
 
     const handleChange = (index: number): void => setActiveStep(index);
-    const handleSubmissionMessage = ({ status, message }: { status: boolean; message: string }) => {
-        setState((state) => ({
-            ...state,
-            submission: { status, message },
-            receiverEmail: formik.values.contact.email
-        }));
-    };
     const handleNext = (index: number) =>
         setActiveStep((prevActiveState) => prevActiveState + index);
     const handlePrev = (index: number) =>
